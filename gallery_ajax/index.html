@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery</title>
+    <style>
+        
+        .gallery__modal-window {
+            z-index: 1000;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            background-color: aqua;
+            top: 0;           
+        }
+
+        .gallery__modal-window_closed {
+            display: none;
+        }
+
+        .gallery-wrapper__img {
+            cursor: pointer;
+        }
+
+        #closeBtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="gallery-wrapper" id="wrapper">
+        <img src="min/1.jpeg" alt="photo" class="gallery__img" data-id="1">
+        <img src="min/2.jpeg" alt="photo" class="gallery__img" data-id="2">
+        <img src="min/3.jpeg" alt="photo" class="gallery__img" data-id="3">
+    </div>
+
+    <script src="Gallery.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

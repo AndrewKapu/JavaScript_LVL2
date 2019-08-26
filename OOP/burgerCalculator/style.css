@@ -1,0 +1,22 @@
+.heading {
+    text-align: center;
+}
+
+.form {
+    display: flex;    
+    justify-content: space-between;
+}
+
+.form__position {
+
+}
+
+.form__label {
+
+}
+
+.form__select {
+    display: block;
+    width: 285px;
+    height: 20px;
+}

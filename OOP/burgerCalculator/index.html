@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Burger Calculator</title>
+</head>
+
+<body>
+    <h1 class="heading">Выберите Ваш бургер</h1>
+    <form action="#" class="form" id="form">
+        <div class="form__position">
+            <label class="form__label" for="burgerName"></label>
+            <select class="form__select" name="burgerNames" id="burgerNames">
+                
+            </select>
+        </div>
+        <div class="form__position">
+            <label class="form__label" for="burgerName"></label>
+            <select class="form__select" name="burgerFillings" id="burgerFillings">
+
+            </select>
+        </div>
+        <div class="form__position">
+            <label class="form__label" for="burgerName"></label>
+            <select class="form__select" name="burgerAdditionals" id="burgerAdditionals">
+
+            </select>
+        </div>
+        <button type="submit" id="formSubmitBtnId">Узнайте подробности!</button>
+    </form>
+    <div id="burgerStats"></div>
+    <script src="BurgerCalculator.js"></script>
+    <script>
+        let burgerCalculator = new BurgerCalculator('form', 'formSubmitBtnId', 'form__select', 'burgerStats', 
+        ['burgerNames', 'burgerFillings', 'burgerAdditionals']);        
+    </script>
+</body>
+
+</html>
