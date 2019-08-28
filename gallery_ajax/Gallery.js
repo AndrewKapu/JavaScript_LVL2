@@ -15,7 +15,6 @@ class Gallery {
      * @property {string} settings.fullImgId - Id of opened full img in modal window
      * @property {string} settings.modalWrapperId - Id of modal window wrapper
      * @property {string} settings.modalWrapperClass Class of modal wrapper
-     * @property {string} settings.modalWrapperClosedClass - Class of closed modal wrapper
      * @property {string} settings.closeBtnSrc - Src of close btn
      * @property {string} settings.closeBtnId -  Id of close btn dom-elem
      */
@@ -72,7 +71,6 @@ class Gallery {
      * @param {string} settings.fullImgId - Id of opened full img in modal window
      * @param {string} settings.modalWrapperId - Id of modal window wrapper
      * @param {string} settings.modalWrapperClass - Class of modal wrapper
-     * @param {string} settings.modalWrapperClosedClass - Class of modal wrapper
      * @param {string} settings.closeBtnSrc - Src to close btn image
      * @param {string} settings.closeBtnId -  Id of close btn dom-elem
      * 
@@ -103,7 +101,7 @@ class Gallery {
             .then(
                 json => {
                     this._fetchImages(json)
-            })
+                })
     }
 
     /**
@@ -119,7 +117,6 @@ class Gallery {
      */
     _initEventHandlers() {
         this._gallery.addEventListener('click', (event) => {
-            event.preventDefault();
             this._handleImgClick(event);
         });
     }
@@ -129,7 +126,7 @@ class Gallery {
      * @param {event} event 
      */
     _handleImgClick(event) {
-        if (event.target.classList[0] === this.settings.imgGeneralClass) {
+        if (event.target.tagName === 'IMG') {
             this._showFullImg(+event.target.dataset.id);
         }
     }
@@ -141,11 +138,11 @@ class Gallery {
     _showFullImg(id) {
         this._getModalWindow();
 
+        this._modalWindow.style.display = 'flex';
         this._modalWindow
             .classList.toggle(this.settings.modalWrapperClosedClass);
         this._modalWindow.querySelector(`#${this.settings.fullImgId}`)
-            .src = this._imgStorage[id].fullPath;
-        //document.body.appendChild(this._getModalWindow(id));
+            .src = this._imgStorage[id].fullPath;     
     }
 
     /**
@@ -165,7 +162,7 @@ class Gallery {
     _createModalWindow() {
         let modalWrapper = document.createElement('div');
         modalWrapper.id = this.settings.modalWrapperId;
-        modalWrapper.classList.add(this.settings.modalWrapperClass);
+        modalWrapper.classList.add(this.settings.modalWrapperClass);        
         document.body.appendChild(modalWrapper);
 
         let img = new Image();
@@ -179,8 +176,8 @@ class Gallery {
             this._closeModalWindow();
         });
         modalWrapper.appendChild(closeBtn);
-
         this._modalWindow = modalWrapper;
+
     }
 
     /**
@@ -196,6 +193,6 @@ class Gallery {
      * Closes modal window in user's interface
      */
     _closeModalWindow() {
-        this._modalWindow.classList.toggle(this.settings.modalWrapperClosedClass);
+        this._modalWindow.style.display = 'none';
     }
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="form" action="#" method="post" id="myform">
+        <div class="form__item-wrapper">
+            <label class="form__label" for="username">Your name</label>
+            <input class="form__input" type="text" id="userName" placeholder="Elon">
+            <!-- <p class="form__err-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, maxime?</p> -->
+        </div>
+        <div class="form__item-wrapper">
+            <label for="username">Your phone</label>
+            <input class="form__input type=" text" id="userPhone" placeholder="+7(000)000-0000">
+        </div>
+        <div class="form__item-wrapper">
+            <label for="username">Your email</label>
+            <input class="form__input type=" email" id="userEmail" placeholder="mymail@mail.ru">
+        </div>
+        <div class="form__item-wrapper">
+            <label for="usertext">Your thoughts</label>
+            <textarea class="form__textarea" id="usertext"></textarea>
+        </div>
+
+        <div>
+            <button class="form__button" type="submit" id="submitBtn">Submit</button>
+        </div>
+    </form>
+    <script src="Validator.js"></script>
+    <script>
+        window.onload = () => {
+            let validator = new Validator({
+                id: 'myform',
+                inputIds: ['userName', 'userPhone', 'userEmail'],
+                errMsgContainerClass: 'form__err-msg',
+                submitBtnId: 'submitBtn',
+            });
+        }
+    </script>
+</body>
+
+</html>

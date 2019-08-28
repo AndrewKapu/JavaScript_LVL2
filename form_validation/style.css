@@ -1,0 +1,43 @@
+.form {}
+
+.form__item-wrapper {
+    position: relative;
+    width: 400px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+}
+
+.form__label {}
+
+.form__input {
+    height: 31px;
+    width: 290px;
+}
+
+.form__textarea {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+.form__button {
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid antiquewhite;
+}
+
+.form__button:hover {
+    box-shadow: 0 0 3px 3px #ccc;
+}
+
+.form__err-msg {
+    position: absolute;
+    width: 255px;
+    right: -275px;
+    top: -18px;
+    border: 2px solid red;
+    color: red;
+}

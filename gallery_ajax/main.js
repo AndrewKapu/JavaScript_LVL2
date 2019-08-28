@@ -7,8 +7,7 @@ window.onload = function() {
         imgGeneralClass: 'gallery__img',
         fullImgId: 'fullImg',
         modalWrapperId: 'modalWrapper',
-        modalWrapperClass: 'gallery__modal-window',
-        modalWrapperClosedClass: 'gallery__modal-window_closed',
+        modalWrapperClass: 'gallery__modal-window',        
         closeBtnSrc: 'img/close_btn.png',
         closeBtnId: 'closeBtn',
     });
