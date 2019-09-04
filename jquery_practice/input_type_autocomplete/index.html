@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input typing autocomplition</title>
+</head>
+
+<body>
+    <form action="#" id="form">
+        <label for="search">Find what you need</label>
+        <input type="text" name="search" id="search" list="hints">
+        <datalist id="hints">
+            <option value="Текст1">
+            <option value="Текст2">
+        </datalist>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="Autocomplete.js"></script>
+    <script>
+        let autocomplete = new Autocomplete({
+            formId: 'form',
+            inputId: 'search',
+            dataListId: 'hints',
+            autocompleteServerRequest: 'autocomplete.json'
+        });
+    </script>
+</body>
+
+</html>
