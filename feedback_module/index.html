@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feedback</title>
+
+    <style>
+        .reviews {}
+
+        .reviews__users-review {
+            width: 400px;
+            border-width: 0 1px 1px 1px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        .reviews__users-review:first-child {
+            border-top: 1px solid black;
+        }
+
+        .review-form__item {
+            width: 300px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+        .review-form__item:last-child {
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="reviews" class="reviews">
+        <h3 class="reviews__heading">Отзывы о нашем товаре</h3>
+        <div id="reviewsWrapper" class="reviews__users-reviews-wrapper">
+            <!-- Single review template -->
+            <!-- <article class="reviews__users-review">
+                <div class="reviews__users-review-name">
+                    Anna
+                </div>
+                <p class="reviews__users-review-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas officiis molestiae aspernatur
+                    facere expedita atque pariatur. Similique facilis voluptatem fugiat.
+                </p>
+            </article> -->
+        </div>
+        <div class="review-form">
+            <h2>Оставьте свой отзыв</h2>
+            <form action="#" id="reviewForm">
+                <div class="review-form__item">
+                    <label for="name">Введите ваше имя</label>
+                    <input type="name" id="name">
+                </div>
+                <div class="review-form__item">
+                    <label for="reviewText">Введите ваши пожелания</label>                   
+                    <textarea id="reviewText" cols="30" rows="10"></textarea>
+                </div>
+                <button id="formSubmit" type="submit">Оставить отзыв</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="Feedback.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
